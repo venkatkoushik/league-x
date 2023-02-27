@@ -29,7 +29,9 @@ function Home() {
 
     const dynamicHandlechange = (event, value) => {
         let inputvalue = event.target.value
-        setDynamicstate({ ...dynamicstate, [value]: { ...dynamicstate[value], value: inputvalue } })
+        if (inputvalue.length === 1) {
+            setDynamicstate({ ...dynamicstate, [value]: { ...dynamicstate[value], value: inputvalue } })
+        }
     }
     const handlechangeofinput = (e) => {
         if (e.target.value <= 6) {
