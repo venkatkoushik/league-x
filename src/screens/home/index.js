@@ -38,9 +38,10 @@ const useStyles = makeStyles((theme) => ({
     },
     grid: {
         display: "grid",
-        gridTemplateRows: "0.9fr 3.8fr 3.8fr 0.5fr",
+        gridTemplateRows: "0.7fr 3.9fr 3.9fr 0.5fr",
         gridTemplateColumns: "1fr 1fr",
         gap: "10px",
+        padding: "10px"
     },
     heading: {
         gridColumn: "1/3",
@@ -389,11 +390,12 @@ function Home() {
         );
     }
     return (
-        <div style={{ padding: "10px" }}>
+        <div style={{}}>
             <div className={classes?.grid}>
                 <div className={classes?.heading}>
                     <Typography align="center">Pick Players</Typography>
-                    <div style={{ display: "flex", justifyContent: "right" }}>
+                    <div style={{ display: "flex", justifyContent: "right", gap: "15px" }}>
+                        <Button color="secondary" size="small" variant="outlined" onClick={() => window.location.reload()}>Reset</Button>
                         <div className={classes?.divparent}>
                             <div className={classes?.divcard}>
                                 <Typography variant="subtitle2">
