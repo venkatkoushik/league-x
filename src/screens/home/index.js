@@ -181,6 +181,7 @@ function Home() {
         setSelectedPlayerTypes({ ...selectedPlayertypes, ...data });
     }, []);
     const handlesubmit = () => {
+        debugger
         let mslength = selectedPlayerslist.filter(
             (v) => v?.team_short_name === "MS"
         );
@@ -193,18 +194,18 @@ function Home() {
             Batsmans:
                 selectedPlayerslist.filter((v) => v?.role === "Batsman")?.length >= 3,
             WicketKeepers:
-                selectedPlayerslist.filter((v) => v?.role === "Wicket-Keeper")
-                    ?.length >= 1,
+                selectedPlayerslist.filter((v) => v?.role === "Wicket-Keeper")?.length >= 1,
             AllRounders:
                 selectedPlayerslist.filter((v) => v?.role === "All-Rounder")?.length >=
                 0,
         };
 
+
         if (selectedPlayerslist.length === 11) {
             if (
                 valid.AllRounders &&
                 valid.Batsmans &&
-                valid.Batsmans &&
+                valid.WicketKeepers &&
                 valid.Bowlers
             ) {
                 if (mslength.length >= 7 || pslength?.length >= 7) {
